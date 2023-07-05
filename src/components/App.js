@@ -13,19 +13,44 @@ const App = ()=> {
         <h2>Child Component</h2>
         <ul>
           <li>Learn React
-            {one ? <button onClick={()=>setOne(false)}>Complete</button> : <button style={{display:"none"}}>Completed</button> 
-            }
+            <Child1 setOne={setOne} one={one}/>
           </li>
           <li>Build a React app
-            {two ? <button onClick={()=>setTwo(false)}>Complete</button> : <button style={{display:"none"}}>Completed</button>
-            }
+            <Child2 setTwo={setTwo} two={two}/>
           </li>
           <li>Deploy a React app
-            {three ? <button onClick={()=>setThree(false)}>Complete</button> : <button style={{display:"none"}}>Completed</button>
-            }
+            <Child3 setThree={setThree} three={three}/>
           </li>
         </ul>
       </div>
+    </div>
+  )
+}
+
+const Child1 = ({one,setOne})=> {
+  return (
+    <div>
+      {  one &&
+        <button onClick={()=>setOne(false)}>Complete</button>
+      }
+    </div>
+  )
+}
+const Child2 = ({two,setTwo})=> {
+  return (
+    <div>
+      {
+        two && <button onClick={()=>setTwo(false)}>Complete</button>
+      }
+    </div>
+  )
+}
+const Child3 = ({three,setThree})=> {
+  return (
+    <div>
+      {
+        three && <button onClick={()=>setThree(false)}>Complete</button>
+      }
     </div>
   )
 }
