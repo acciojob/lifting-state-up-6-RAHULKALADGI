@@ -3,9 +3,9 @@ import React ,{useState} from "react";
 import './../styles/App.css';
 
 const App = ()=> {
-    let [one , setOne] = useState(false);
-    let [two , setTwo] = useState(false);
-    let [three , setThree] = useState(false);
+    let [one , setOne] = useState(true);
+    let [two , setTwo] = useState(true);
+    let [three , setThree] = useState(true);
   return (
     <div>
       <h1>Parent Component</h1>
@@ -13,18 +13,15 @@ const App = ()=> {
         <h2>Child Component</h2>
         <ul>
           <li>Learn React
-            {one || 
-              <button onClick={()=>setOne(true)}>Complete</button>
+            {one && <button onClick={()=>setOne(false)}>Complete</button>
             }
           </li>
           <li>Build a React app
-            {two || 
-              <button onClick={()=>setTwo(true)}>Complete</button>
+            {two && <button onClick={()=>setTwo(false)}>Complete</button>
             }
           </li>
           <li>Deploy a React app
-            {three || 
-              <button onClick={()=>setThree(true)}>Complete</button>
+            {three && <button onClick={()=>setThree(false)}>Complete</button>
             }
           </li>
         </ul>
