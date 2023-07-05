@@ -13,15 +13,15 @@ const App = ()=> {
         <h2>Child Component</h2>
         <ul>
           <li>Learn React
-            {one && <button onClick={()=>setOne(false)}>Complete</button>
+            {one ? <button onClick={()=>setOne(false)}>Complete</button> : <button style={{display:"none"}}>Completed</button> 
             }
           </li>
           <li>Build a React app
-            {two && <button onClick={()=>setTwo(false)}>Complete</button>
+            {two ? <button onClick={()=>setTwo(false)}>Complete</button> : <button style={{display:"none"}}>Completed</button>
             }
           </li>
           <li>Deploy a React app
-            {three && <button onClick={()=>setThree(false)}>Complete</button>
+            {three ? <button onClick={()=>setThree(false)}>Complete</button> : <button style={{display:"none"}}>Completed</button>
             }
           </li>
         </ul>
